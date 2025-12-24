@@ -1,0 +1,27 @@
+{
+  "US": {
+    "name": "United States",
+    "fact": "In the US, Christmas stockings are hung by the fireplace for Santa to fill with gifts.",
+    "music": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Jingle_Bells.ogg"
+  },
+  "MX": {
+    "name": "Mexico",
+    "fact": "Mexicans celebrate Las Posadas, a reenactment of Mary and Joseph's search for shelter.",
+    "music": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Noche_de_Paz.ogg"
+  },
+  "DE": {
+    "name": "Germany",
+    "fact": "Germany is famous for its Christmas markets and the tradition of the Advent calendar.",
+    "music": "https://upload.wikimedia.org/wikipedia/commons/7/7c/O_Tannenbaum.ogg"
+  },
+  "JP": {
+    "name": "Japan",
+    "fact": "In Japan, Christmas is celebrated with KFC and strawberry shortcake!",
+    "music": ""
+  },
+  "AU": {
+    "name": "Australia",
+    "fact": "Christmas in Australia is during summer, so many celebrate with a BBQ on the beach.",
+    "music": ""
+  }
+}

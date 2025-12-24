@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <g id="US">
+    <rect x="80" y="120" width="120" height="60" fill="#b3cde0" stroke="#333"/>
+  </g>
+  <g id="MX">
+    <rect x="80" y="200" width="60" height="40" fill="#fbb4ae" stroke="#333"/>
+  </g>
+  <g id="DE">
+    <rect x="500" y="100" width="40" height="30" fill="#ccebc5" stroke="#333"/>
+  </g>
+  <g id="JP">
+    <rect x="700" y="140" width="30" height="20" fill="#decbe4" stroke="#333"/>
+  </g>
+  <g id="AU">
+    <rect x="700" y="300" width="60" height="30" fill="#fed9a6" stroke="#333"/>
+  </g>
+</svg>

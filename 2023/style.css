@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Beastly&family=Rubik+Doodle+Shadow&family=Rubik+Maps&family=Rubik+Marker+Hatch&display=swap');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #061325; /* Dark blue background */
+    cursor: none; /* Hide default cursor */
+}
+
+.snowflakes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.snowflake {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fff; /* White color */
+    border-radius: 50%;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.title-container {
+    position: absolute;
+    padding-top: 5%;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    color:#061325;
+    z-index: 100;
+    text-align: center;
+    color: #fff;
+    text-shadow: 
+        0 0 10px #ff0000,   /* Red shadow */
+        0 0 20px #ff0000,
+        0 0 30px #ff0000,
+        0 0 40px #00ff00,   /* Green shadow */
+        0 0 50px #00ff00,
+        0 0 60px #00ff00;
+}
+
+.title-container .title {
+    font-family: 'Rubik Doodle Shadow', cursive;
+    font-size: 3rem;
+}
+
+.title-container .paragraph {
+    font-family: 'Rubik Marker Hatch', cursive;
+    font-size: 1rem;
+}
+
+.message-container {
+    color:#061325;
+    padding-top: 30px;
+    z-index: 100;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    text-shadow: none;
+}
+
+.simple-footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    z-index: 100;
+    text-align: center;
+    font-family: 'Rubik Maps', sans-serif;
+    font-size: 1rem;
+}
+
+.cursor {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at center, rgba(38, 228, 48, 0.73), #ffffff82, rgba(228, 38, 38, 0.73)); /* Radial gradient */
+    border-radius: 50%;
+    pointer-events: none; /* Allow clicks to go through the cursor */
+}

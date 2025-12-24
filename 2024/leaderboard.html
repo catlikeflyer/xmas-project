@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="fav.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Under the Missile Toad</title>
+    <style>
+      body {
+        font-family: "Amatic SC", cursive;
+        background: #222;
+        color: white;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzkydHltajR3bXRrcHNlajF3NzF4bnBuOGg2cnM4Y3ViNmQwdDkyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt4mSPCUQRkIBG/giphy.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      ol {
+        list-style: none;
+        padding: 0;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      li {
+        background: rgba(255, 255, 255, 0.1);
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .btn {
+        color: white;
+        text-decoration: none;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      .past-item {
+        margin: 5px 0;
+        background: none;
+        padding: 5px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Leaderboard</h1>
+    <ol id="leaderboardList"></ol>
+    <a class="btn" href="play.html">Back to Game</a>
+    <h2 style="font-size: 1.5em; margin-top: 30px">Past Versions</h2>
+    <ul style="list-style: none; padding: 0">
+      <li class="past-item">
+        <a href="https://xmas2023.dhnam.me">Christmas 2023</a>
+      </li>
+      <li class="past-item">
+        <a href="https://xmas2022.dhnam.me">Christmas 2022</a>
+      </li>
+    </ul>
+    <footer>
+      <p>
+        Made with ❤️ by <a href="https://dhnam.me" target="_blank">DHNAM</a>
+      </p>
+    </footer>
+    <script type="module" src="leaderboard.js"></script>
+  </body>
+</html>

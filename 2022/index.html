@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="assets/santaicon.png" />
+    <title>X-mas Protocol</title>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 onclick="PlaySong('happysanta')">Merry X-mas to y'all!</h1>
+      <p class="cp" onclick="PlaySong('jinglebells')">
+        A todxs les deseo una muy buena navidad rodeadxs de sus seres queridxs.
+        Después de un año con muchos cambios y novedades, estoy seguro que nos
+        espera un año más fuerte.<br/><br/><span class="hilite">(Da click en las imagenes o texto)</span></p>
+      </p>
+      <audio id="happysanta" src="songs/happy-santa.mp3" preload="auto">
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+      <audio id="jinglebells" src="songs/jingle-bells.mp3" preload="auto">
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+      <audio
+        id="wewishyouamerrychristmas"
+        src="songs/we-wish.mp3"
+        preload="auto"
+      >
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+
+      <div id="santa-container">
+        <img
+          src="assets/giphy.gif"
+          alt="santa-reindeers"
+          class="responsive"
+          id="santa-is-coming"
+          onmouseover="PlaySound('hohoho')"
+          onclick="PlaySound('hohoho')"
+        />
+        <audio id="hohoho" src="songs/ho-ho-ho.wav" preload="auto">
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </div>
+      <div id="earth-container">
+        <img
+          src="assets/earth.png"
+          alt=""
+          class="responsive rotate"
+          id="earth-img"
+          onclick="PlaySong('wewishyouamerrychristmas')"
+        />
+      </div>
+    </div>
+    <div class="background-container">
+      <img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png"
+        alt=""
+      />
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+      <div class="clouds"></div>
+    </div>
+    <footer>
+      <p>
+        <a href="https://dhnam.me">DHNAM</a> wishes you a very merry christmas.
+      </p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

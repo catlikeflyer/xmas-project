@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Editions by DHNAM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Pacifico&family=Fredoka:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Fredoka", "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f2027 0%,
+          #203a43 50%,
+          #2c5364 100%
+        );
+        min-height: 100vh;
+        padding: 40px 20px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 0, 0, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(0, 255, 0, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 215, 0, 0.05) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-family: "Mountains of Christmas", cursive;
+        text-align: center;
+        color: #fff;
+        font-size: 4em;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+          0 0 60px rgba(255, 0, 0, 0.4), 3px 3px 6px rgba(0, 0, 0, 0.5),
+          -2px -2px 4px rgba(0, 255, 0, 0.3);
+        letter-spacing: 2px;
+      }
+
+      .subtitle {
+        font-family: "Pacifico", cursive;
+        text-align: center;
+        color: #ffd700;
+        font-size: 1.5em;
+        margin-bottom: 50px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .editions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .edition-card {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.15) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        border: 3px solid rgba(255, 215, 0, 0.4);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .edition-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 215, 0, 0.1),
+          transparent
+        );
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+      }
+
+      .edition-card:hover::before {
+        left: 100%;
+      }
+
+      .edition-card:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 0 15px 50px rgba(255, 215, 0, 0.4),
+          0 0 60px rgba(255, 107, 107, 0.3);
+        border-color: rgba(255, 215, 0, 0.9);
+      }
+
+      .edition-year {
+        font-family: "Mountains of Christmas", cursive;
+        font-size: 3.5em;
+        color: #ffd700;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5),
+          0 0 20px rgba(255, 215, 0, 0.6);
+        font-weight: 700;
+      }
+
+      .edition-title {
+        font-family: "Pacifico", cursive;
+        font-size: 1.8em;
+        color: #ff6b6b;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin: 10px 0;
+      }
+
+      .edition-description {
+        font-family: "Fredoka", sans-serif;
+        font-size: 1.1em;
+        color: #e8f4f8;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        line-height: 1.6;
+      }
+
+      .edition-emoji {
+        font-size: 3em;
+        margin: 10px 0;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-15px) rotate(10deg);
+        }
+      }
+
+      .current-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: linear-gradient(135deg, #ff6b6b, #ffd700);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 80px;
+        padding: 30px;
+        color: #e8f4f8;
+        font-size: 1.2em;
+      }
+
+      footer a {
+        color: #ffd700;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+
+      footer a:hover {
+        color: #fff;
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5em;
+        }
+        .subtitle {
+          font-size: 1.2em;
+        }
+        .editions-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎄 Do's Christmas 🎅</h1>
+      <p class="subtitle">A Journey Through the Years</p>
+
+      <div class="editions-grid">
+        <a href="2025/index.html" class="edition-card">
+          <span class="current-badge">⭐ LATEST</span>
+          <div class="edition-emoji">🌍</div>
+          <div class="edition-year">2025</div>
+          <div class="edition-title">Around the World</div>
+          <div class="edition-description">
+            Explore Christmas traditions from 19 countries on a beautiful 3D
+            interactive globe. Discover how the world celebrates!
+          </div>
+        </a>
+
+        <a href="2024/index.html" class="edition-card">
+          <div class="edition-emoji">🐸</div>
+          <div class="edition-year">2024</div>
+          <div class="edition-title">Missile Toad</div>
+          <div class="edition-description">
+            A fun Christmas game! Catch the missile toads and compete on the
+            leaderboard. Ho-ho-ho!
+          </div>
+        </a>
+
+        <a href="2023/index.html" class="edition-card">
+          <div class="edition-emoji">✨</div>
+          <div class="edition-year">2023</div>
+          <div class="edition-title">Magic Light</div>
+          <div class="edition-description">
+            Use the magic light cursor to reveal hidden Christmas messages.
+            Beautiful snowfall animations included!
+          </div>
+        </a>
+
+        <a href="2022/index.html" class="edition-card">
+          <div class="edition-emoji">🎅</div>
+          <div class="edition-year">2022</div>
+          <div class="edition-title">Santa's Journey</div>
+          <div class="edition-description">
+            Interactive Santa animations with festive music and ho-ho-ho sounds.
+            Click around to celebrate!
+          </div>
+        </a>
+      </div>
+
+      <footer>
+        <p>
+          Made with ❤️ by <a href="https://dhnam.me" target="_blank">DHNAM</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

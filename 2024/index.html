@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="fav.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Under the Missile Toad</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #186a30;
+        font-family: "Amatic SC", cursive;
+        background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzkydHltajR3bXRrcHNlajF3NzF4bnBuOGg2cnM4Y3ViNmQwdDkyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0MYt4mSPCUQRkIBG/giphy.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      img {
+        max-width: 70%;
+        height: auto;
+      }
+      .btn {
+        color: white;
+        text-decoration: none;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 10px 20px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 20px;
+      }
+
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <h1
+      style="
+        position: absolute;
+        top: 20px;
+        font-size: 24px;
+        color: white;
+        text-align: center;
+        width: 100%;
+      "
+    >
+      Made with ❤️ by <a href="https://dhnam.me" target="_blank">DHNAM</a></p>
+
+    </h1>
+    <img src="logo.png" alt="Centered Image" id="centeredImage" />
+    <p
+      style="
+        position: absolute;
+        bottom: 60px;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+      "
+    >
+    Merry Christmas! <br />
+      Click on the falling missile toads to prevent them from reaching the
+      Christmas gifts!
+    </p>
+    <a class="btn" href="play.html">Play Game</a>
+    <audio id="audio" src="sounds/intro.mp3"></audio>
+    <audio id="bg" src="sounds/bgmusic.mp3" loop></audio>
+    <script>
+      window.onload = function () {
+        document.getElementById("bg").play();
+      };
+      document.getElementById("centeredImage").onload = function () {
+        document.getElementById("audio").play();
+      };
+      document.getElementById("playButton").onclick = function () {
+        window.location.href = "play.html";
+      };
+      // Play bg music on load
+      document.getElementById("bg").play();
+    </script>
+  </body>
+</html>
+<style>
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg) scale(0.1);
+    }
+    to {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+  #centeredImage {
+    animation: rotate 2s ease-in-out;
+  }
+</style>

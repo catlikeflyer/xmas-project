@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xmas Around the World</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Pacifico&family=Fredoka:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  </head>
+  <body>
+    <h1>🎄 Xmas Around the World 🌍</h1>
+    <p style="text-align: center; color: #555; margin-bottom: 10px">
+      Click on a marker to learn about Christmas traditions! Drag to rotate the
+      globe.
+    </p>
+    <div id="globe-container"></div>
+    <div id="map-container" style="display: none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 800 400"
+        style="width: 80vw; max-width: 900px; height: auto"
+      >
+        <!-- World map background -->
+        <defs>
+          <pattern
+            id="grid"
+            width="50"
+            height="50"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M 50 0 L 0 0 0 50"
+              fill="none"
+              stroke="#e0e0e0"
+              stroke-width="0.5"
+              opacity="0.3"
+            />
+          </pattern>
+        </defs>
+
+        <!-- Ocean -->
+        <rect width="800" height="400" fill="#a8d8ea" />
+
+        <!-- Simplified world continents -->
+        <!-- North America -->
+        <path
+          d="M 50 80 L 180 70 L 200 100 L 210 150 L 180 180 L 150 200 L 120 220 L 90 230 L 70 210 L 60 180 L 50 150 Z"
+          fill="#d4e7d7"
+          stroke="#8fbc8f"
+          stroke-width="1"
+          opacity="0.5"
+        />
+
+        <!-- South America -->
+        <path
+          d="M 150 240 L 170 250 L 180 280 L 170 320 L 150 350 L 130 340 L 120 310 L 130 270 Z"
+          fill="#d4e7d7"
+          stroke="#8fbc8f"
+          stroke-width="1"
+          opacity="0.5"
+        />
+
+        <!-- Europe -->
+        <path
+          d="M 450 80 L 520 75 L 540 90 L 545 110 L 530 130 L 500 135 L 470 125 L 450 105 Z"
+          fill="#d4e7d7"
+          stroke="#8fbc8f"
+          stroke-width="1"
+          opacity="0.5"
+        />
+
+        <!-- Africa -->
+        <path
+          d="M 480 140 L 520 145 L 540 180 L 550 230 L 540 280 L 510 310 L 480 300 L 470 260 L 475 200 L 480 170 Z"
+          fill="#d4e7d7"
+          stroke="#8fbc8f"
+          stroke-width="1"
+          opacity="0.5"
+        />
+
+        <!-- Asia -->
+        <path
+          d="M 550 70 L 650 65 L 720 80 L 740 110 L 730 150 L 710 180 L 680 190 L 640 185 L 600 170 L 570 140 L 550 100 Z"
+          fill="#d4e7d7"
+          stroke="#8fbc8f"
+          stroke-width="1"
+          opacity="0.5"
+        />
+
+        <!-- Australia -->
+        <path
+          d="M 680 280 L 740 285 L 760 310 L 750 335 L 720 340 L 690 330 L 680 305 Z"
+          fill="#d4e7d7"
+          stroke="#8fbc8f"
+          stroke-width="1"
+          opacity="0.5"
+        />
+
+        <!-- Clickable countries on top -->
+        <g id="US" class="country">
+          <rect
+            x="80"
+            y="120"
+            width="120"
+            height="60"
+            fill="#b3cde0"
+            stroke="#333"
+            stroke-width="2"
+          />
+          <text
+            x="140"
+            y="155"
+            text-anchor="middle"
+            fill="#333"
+            font-size="14"
+            font-weight="bold"
+          >
+            USA
+          </text>
+        </g>
+        <g id="MX" class="country">
+          <rect
+            x="80"
+            y="200"
+            width="60"
+            height="40"
+            fill="#fbb4ae"
+            stroke="#333"
+            stroke-width="2"
+          />
+          <text
+            x="110"
+            y="225"
+            text-anchor="middle"
+            fill="#333"
+            font-size="12"
+            font-weight="bold"
+          >
+            MX
+          </text>
+        </g>
+        <g id="DE" class="country">
+          <rect
+            x="500"
+            y="100"
+            width="40"
+            height="30"
+            fill="#ccebc5"
+            stroke="#333"
+            stroke-width="2"
+          />
+          <text
+            x="520"
+            y="120"
+            text-anchor="middle"
+            fill="#333"
+            font-size="11"
+            font-weight="bold"
+          >
+            DE
+          </text>
+        </g>
+        <g id="JP" class="country">
+          <rect
+            x="700"
+            y="140"
+            width="30"
+            height="20"
+            fill="#decbe4"
+            stroke="#333"
+            stroke-width="2"
+          />
+          <text
+            x="715"
+            y="154"
+            text-anchor="middle"
+            fill="#333"
+            font-size="10"
+            font-weight="bold"
+          >
+            JP
+          </text>
+        </g>
+        <g id="AU" class="country">
+          <rect
+            x="700"
+            y="300"
+            width="60"
+            height="30"
+            fill="#fed9a6"
+            stroke="#333"
+            stroke-width="2"
+          />
+          <text
+            x="730"
+            y="320"
+            text-anchor="middle"
+            fill="#333"
+            font-size="12"
+            font-weight="bold"
+          >
+            AU
+          </text>
+        </g>
+      </svg>
+    </div>
+    <div id="country-info">
+      <h2 id="country-name">🌟 Select a country</h2>
+      <p id="country-fact">
+        Click on a marker on the globe to discover Christmas traditions around
+        the world!
+      </p>
+      <audio id="country-music" controls style="display: none"></audio>
+    </div>
+    
+    <div id="past-versions">
+      <h3>🎅 Past Christmas Editions</h3>
+      <div class="versions-grid">
+        <a href="../2022/index.html" class="version-card">
+          <span class="year">2022</span>
+          <span class="description">Santa's Journey</span>
+        </a>
+        <a href="../2023/index.html" class="version-card">
+          <span class="year">2023</span>
+          <span class="description">Magic Light</span>
+        </a>
+        <a href="../2024/index.html" class="version-card">
+          <span class="year">2024</span>
+          <span class="description">Missile Toad</span>
+        </a>
+      </div>
+    </div>
+    
+    <footer>
+      <p>Made with ❤️ by <a href="https://dhnam.me" target="_blank">DHNAM</a></p>
+    </footer>
+    
+    <script src="globe.js"></script>
+  </body>
+</html>
