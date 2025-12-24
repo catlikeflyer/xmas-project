@@ -295,7 +295,7 @@ Object.keys(countryData).forEach((code) => {
 
 camera.position.z = 5;
 
-// Mouse interaction
+// Mouse and Touch interaction
 let isDragging = false;
 let previousMousePosition = { x: 0, y: 0 };
 let rotation = { x: 0, y: 0 };
@@ -318,6 +318,37 @@ renderer.domElement.addEventListener("mousemove", (e) => {
 });
 
 renderer.domElement.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+// Touch events for mobile
+renderer.domElement.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    isDragging = true;
+    previousMousePosition = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  }
+});
+
+renderer.domElement.addEventListener("touchmove", (e) => {
+  if (isDragging && e.touches.length === 1) {
+    e.preventDefault(); // Prevent scrolling
+    const deltaX = e.touches[0].clientX - previousMousePosition.x;
+    const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+    rotation.y += deltaX * 0.005;
+    rotation.x += deltaY * 0.005;
+
+    previousMousePosition = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  }
+});
+
+renderer.domElement.addEventListener("touchend", () => {
   isDragging = false;
 });
 
