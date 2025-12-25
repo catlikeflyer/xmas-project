@@ -222,14 +222,6 @@ h1 {
   font-weight: 400;
 }
 
-#country-music {
-  margin-top: 25px;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
 p {
   font-family: 'Fredoka', sans-serif;
   color: #e8f4f8;

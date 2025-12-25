@@ -2,143 +2,121 @@
 
 const countryName = document.getElementById("country-name");
 const countryFact = document.getElementById("country-fact");
-const countryMusic = document.getElementById("country-music");
 
 // Country data with coordinates (latitude, longitude)
 const countryData = {
   US: {
     name: "United States 🇺🇸",
     fact: "In the US, Christmas stockings are hung by the fireplace for Santa to fill with gifts. Families decorate trees and leave cookies and milk for Santa.",
-    music:
-      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Jingle_Bells.ogg",
     lat: 37.0902,
     lon: -95.7129,
   },
   MX: {
     name: "Mexico 🇲🇽",
     fact: "Mexicans celebrate Las Posadas, a reenactment of Mary and Joseph's search for shelter. The celebration includes piñatas, traditional foods, and nativity scenes.",
-    music:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Noche_de_Paz.ogg",
     lat: 23.6345,
     lon: -102.5528,
   },
   DE: {
     name: "Germany 🇩🇪",
     fact: "Germany is famous for its Christmas markets (Weihnachtsmärkte) and the tradition of the Advent calendar. The Christmas tree tradition also originated here!",
-    music:
-      "https://upload.wikimedia.org/wikipedia/commons/7/7c/O_Tannenbaum.ogg",
     lat: 51.1657,
     lon: 10.4515,
   },
   JP: {
     name: "Japan 🇯🇵",
     fact: "In Japan, Christmas is celebrated with KFC and strawberry shortcake! It's more of a romantic holiday than a family one, similar to Valentine's Day.",
-    music: "",
     lat: 36.2048,
     lon: 138.2529,
   },
   AU: {
     name: "Australia 🇦🇺",
     fact: "Christmas in Australia is during summer, so many celebrate with a BBQ on the beach. Santa sometimes arrives on a surfboard instead of a sleigh!",
-    music: "",
     lat: -25.2744,
     lon: 133.7751,
   },
   BR: {
     name: "Brazil 🇧🇷",
     fact: "In Brazil, Christmas is celebrated in summer with Papai Noel (Santa) wearing silk! Families gather for midnight mass and enjoy a festive dinner.",
-    music: "",
     lat: -14.235,
     lon: -51.9253,
   },
   IT: {
     name: "Italy 🇮🇹",
     fact: "Italians celebrate with La Befana, a witch who brings gifts on January 6th. The Christmas season includes elaborate nativity scenes called 'presepi'.",
-    music: "",
+
     lat: 41.8719,
     lon: 12.5674,
   },
   IN: {
     name: "India 🇮🇳",
     fact: "Christians in India decorate mango and banana trees and light small oil lamps on rooftops and walls. Clay lamps illuminate homes during Christmas.",
-    music: "",
     lat: 20.5937,
     lon: 78.9629,
   },
   GB: {
     name: "United Kingdom 🇬🇧",
     fact: "In the UK, Christmas crackers are pulled at dinner, revealing paper hats and jokes. Mince pies and Christmas pudding are traditional treats.",
-    music: "",
     lat: 55.3781,
     lon: -3.436,
   },
   FR: {
     name: "France 🇫🇷",
     fact: "French children leave their shoes by the fireplace for Père Noël to fill. The Yule log cake (Bûche de Noël) is a beloved dessert.",
-    music: "",
     lat: 46.2276,
     lon: 2.2137,
   },
   ES: {
     name: "Spain 🇪🇸",
     fact: "In Spain, the main gift-giving day is January 6th (Three Kings Day). On Christmas Eve, families gather for a big feast after midnight mass.",
-    music: "",
     lat: 40.4637,
     lon: -3.7492,
   },
   RU: {
     name: "Russia 🇷🇺",
     fact: "Russia celebrates Christmas on January 7th. Grandfather Frost (Ded Moroz) and his granddaughter deliver gifts during New Year celebrations.",
-    music: "",
     lat: 61.524,
     lon: 105.3188,
   },
   CN: {
     name: "China 🇨🇳",
     fact: "Christmas is growing in popularity in China. People decorate with paper chains and lanterns, and give apples as gifts on Christmas Eve.",
-    music: "",
     lat: 35.8617,
     lon: 104.1954,
   },
   ZA: {
     name: "South Africa 🇿🇦",
     fact: "Christmas in South Africa is during summer! Families enjoy outdoor braais (barbecues) and caroling in the streets.",
-    music: "",
     lat: -30.5595,
     lon: 22.9375,
   },
   SE: {
     name: "Sweden 🇸🇪",
     fact: "Swedes celebrate with a Julbord feast and watch Donald Duck on TV every Christmas Eve. St. Lucia Day on December 13th kicks off the season.",
-    music: "",
     lat: 60.1282,
     lon: 18.6435,
   },
   PH: {
     name: "Philippines 🇵🇭",
     fact: "The Philippines has the longest Christmas season, starting in September! Giant lanterns (parols) decorate homes and the Simbang Gabi (night mass) is a beloved tradition.",
-    music: "",
     lat: 12.8797,
     lon: 121.774,
   },
   EG: {
     name: "Egypt 🇪🇬",
     fact: "Coptic Christians in Egypt celebrate Christmas on January 7th. They fast for 43 days before Christmas and break the fast with a special meal called fatta.",
-    music: "",
     lat: 26.8206,
     lon: 30.8025,
   },
   CA: {
     name: "Canada 🇨🇦",
     fact: "Canadians enjoy ice skating, hockey, and winter sports during Christmas. Many write letters to Santa with the postal code H0H 0H0 (North Pole)!",
-    music: "",
     lat: 56.1304,
     lon: -106.3468,
   },
   KR: {
     name: "South Korea 🇰🇷",
     fact: "South Koreans celebrate Christmas with beautiful light displays in cities. Many attend midnight mass and exchange gifts. Christmas cake, especially from local bakeries, is a popular tradition!",
-    music: "",
     lat: 37.5665,
     lon: 126.978,
   },
@@ -402,14 +380,6 @@ renderer.domElement.addEventListener("click", (event) => {
 function showCountryInfo(code, info) {
   countryName.textContent = info.name;
   countryFact.textContent = info.fact;
-  if (info.music) {
-    countryMusic.src = info.music;
-    countryMusic.style.display = "block";
-    countryMusic.play();
-  } else {
-    countryMusic.style.display = "none";
-    countryMusic.pause();
-  }
 
   // Show the overlay
   const overlay = document.getElementById("country-info-overlay");
@@ -419,9 +389,6 @@ function showCountryInfo(code, info) {
 function hideCountryInfo() {
   const overlay = document.getElementById("country-info-overlay");
   overlay.style.display = "none";
-
-  // Stop music if playing
-  countryMusic.pause();
 }
 
 // Close overlay when clicking outside the card
