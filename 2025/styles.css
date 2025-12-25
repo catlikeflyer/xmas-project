@@ -29,7 +29,7 @@ h1 {
   color: #fff;
   margin-top: 20px;
   margin-bottom: 10px;
-  font-size: 3.5em;
+  font-size: 2.5em;
   font-weight: 700;
   text-shadow: 
     0 0 30px rgba(255, 215, 0, 0.8),
@@ -99,9 +99,34 @@ h1 {
   transform: scale(1.05);
 }
 
-#country-info {
+/* Overlay for country info modal */
+#country-info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#country-info-card {
   text-align: center;
-  margin: 30px auto;
   background: linear-gradient(135deg, rgba(255, 250, 240, 0.98) 0%, rgba(255, 245, 230, 0.95) 100%);
   border-radius: 20px;
   box-shadow: 
@@ -110,14 +135,26 @@ h1 {
     inset 0 2px 10px rgba(255, 255, 255, 0.5);
   padding: 35px;
   max-width: 600px;
+  width: 90%;
   border: 3px solid #ff6b6b;
   border-image: linear-gradient(45deg, #ff6b6b, #ffd700, #4ecdc4, #ff6b6b) 1;
   backdrop-filter: blur(15px);
   position: relative;
-  z-index: 1;
+  animation: slideIn 0.3s ease;
 }
 
-#country-info::before {
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#country-info-card::before {
   content: "❄️";
   position: absolute;
   top: -15px;
@@ -126,13 +163,39 @@ h1 {
   animation: float 3s ease-in-out infinite;
 }
 
-#country-info::after {
+#country-info-card::after {
   content: "🎄";
   position: absolute;
   top: -15px;
   right: 20px;
   font-size: 2em;
   animation: float 3s ease-in-out infinite 1.5s;
+}
+
+#close-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 107, 107, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+#close-overlay:hover {
+  background: rgba(255, 0, 0, 0.9);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
 }
 
 @keyframes float {

@@ -20,6 +20,20 @@
       globe.
     </p>
     <div id="globe-container"></div>
+
+    <!-- Overlay for country info -->
+    <div id="country-info-overlay" style="display: none">
+      <div id="country-info-card">
+        <button id="close-overlay" aria-label="Close">✕</button>
+        <h2 id="country-name">🌟 Select a country</h2>
+        <p id="country-fact">
+          Click on a marker on the globe to discover Christmas traditions around
+          the world!
+        </p>
+        <audio id="country-music" controls style="display: none"></audio>
+      </div>
+    </div>
+
     <div id="map-container" style="display: none">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -210,15 +224,7 @@
         </g>
       </svg>
     </div>
-    <div id="country-info">
-      <h2 id="country-name">🌟 Select a country</h2>
-      <p id="country-fact">
-        Click on a marker on the globe to discover Christmas traditions around
-        the world!
-      </p>
-      <audio id="country-music" controls style="display: none"></audio>
-    </div>
-    
+
     <div id="past-versions">
       <h3>🎅 Past Christmas Editions</h3>
       <div class="versions-grid">
@@ -236,11 +242,13 @@
         </a>
       </div>
     </div>
-    
+
     <footer>
-      <p>Made with ❤️ by <a href="https://dhnam.me" target="_blank">DHNAM</a></p>
+      <p>
+        Made with ❤️ by <a href="https://dhnam.me" target="_blank">DHNAM</a>
+      </p>
     </footer>
-    
+
     <script src="globe.js"></script>
   </body>
 </html>

@@ -410,7 +410,40 @@ function showCountryInfo(code, info) {
     countryMusic.style.display = "none";
     countryMusic.pause();
   }
+
+  // Show the overlay
+  const overlay = document.getElementById("country-info-overlay");
+  overlay.style.display = "flex";
 }
+
+function hideCountryInfo() {
+  const overlay = document.getElementById("country-info-overlay");
+  overlay.style.display = "none";
+
+  // Stop music if playing
+  countryMusic.pause();
+}
+
+// Close overlay when clicking outside the card
+document
+  .getElementById("country-info-overlay")
+  .addEventListener("click", (e) => {
+    if (e.target.id === "country-info-overlay") {
+      hideCountryInfo();
+    }
+  });
+
+// Close overlay when clicking the close button
+document.getElementById("close-overlay").addEventListener("click", () => {
+  hideCountryInfo();
+});
+
+// Close overlay on Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    hideCountryInfo();
+  }
+});
 
 // Animation loop
 function animate() {
